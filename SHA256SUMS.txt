@@ -1,0 +1,2 @@
+c305b726174ad5ae49bb3404fdc1e6b00f3346b89f57d90fb018e55a43920614  BetterStorageFilter-0.2.0-mvp.zip
+a98af02591687192f242f244ecfb5664e3c67d217b1a17d8e639dd85e5f4c0ef  release-info.json

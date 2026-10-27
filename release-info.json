@@ -1,0 +1,25 @@
+{
+  "name": "Better Storage Filter",
+  "version": "0.2.0",
+  "channel": "beta",
+  "target": "HBS BATTLETECH with RogueTech; MechBay Storage",
+  "archive": "BetterStorageFilter-0.2.0-mvp.zip",
+  "archive_sha256": "c305b726174ad5ae49bb3404fdc1e6b00f3346b89f57d90fb018e55a43920614",
+  "payload_sha256": {
+    "BetterStorageFilter.dll": "80cf22f4c859261c51b161f25c4ebcd33db5d3fb656ac5b67bd5f8cf0e010fbc",
+    "CHANGELOG.md": "25ed5ec2dadbb140f751a3cdb42ab01f97bbdfc2aed751831246b0afc89ded06",
+    "README.md": "b0c7d35860a6ade515be5162b84c943218c6990ecd16b70ee39181b6bb75659f",
+    "mod.json": "aeed447a4f45fb3b6e0b88d2e7995c3e29aabc818f9035b1571ef92b554f2d6b"
+  },
+  "manifest_dependencies": [
+    "RogueTech Core",
+    "CustomUnits",
+    "CustomFilters",
+    "IRTweaks"
+  ],
+  "compatibility_notes": [
+    "Not a vanilla BATTLETECH mod. RogueTech updates may change the required integration ABI.",
+    "No game or dependency binaries are included.",
+    "No RogueTech online approval or integrity-check bypass is claimed."
+  ]
+}
