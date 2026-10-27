@@ -10,12 +10,13 @@ This repository contains **downloads, checksums, release metadata and user docum
 
 ## Download 0.2.0 (beta)
 
-- [Mod ZIP: BetterStorageFilter-0.2.0-mvp.zip](https://github.com/billhatter/BetterStorageFilter-Releases/releases/download/v0.2.0/BetterStorageFilter-0.2.0-mvp.zip)
+- **[Vortex installer: BetterStorageFilter-0.2.0-vortex.zip](https://github.com/billhatter/BetterStorageFilter-Releases/releases/download/v0.2.0/BetterStorageFilter-0.2.0-vortex.zip)** — drop into Vortex or use Install From File.
+- [Manual download: BetterStorageFilter-0.2.0-mvp.zip](https://github.com/billhatter/BetterStorageFilter-Releases/releases/download/v0.2.0/BetterStorageFilter-0.2.0-mvp.zip) — the original manual ModTek ZIP.
 - [SHA-256 checksums](https://github.com/billhatter/BetterStorageFilter-Releases/releases/download/v0.2.0/SHA256SUMS.txt)
-- [Release metadata and individual payload hashes](https://github.com/billhatter/BetterStorageFilter-Releases/releases/download/v0.2.0/release-info.json)
+- [Release metadata and payload hashes](https://github.com/billhatter/BetterStorageFilter-Releases/releases/download/v0.2.0/release-info.json)
 - [Release page](https://github.com/billhatter/BetterStorageFilter-Releases/releases/tag/v0.2.0)
 
-**Download the named mod ZIP above.** GitHub's automatic “Source code” ZIP/tar.gz files contain this repository's documentation/checksums, not the mod installer or project source.
+Both ZIPs contain the **same tested 0.2.0 mod files and DLL**. The Vortex ZIP adds only installation metadata selecting the correct game-folder destination. GitHub's automatically generated **Source code** ZIP/TAR files contain this download-page repository, not the mod or its implementation.
 
 ## Features
 
@@ -24,30 +25,45 @@ This repository contains **downloads, checksums, release metadata and user docum
 - Choices combine within each row; the type and weight rows intersect.
 - All nine toggles start ON. **Reset Filters** enables them all.
 - Turning every toggle OFF in either row shows no matches; OFF buttons remain clickable.
-- Complete stored units and parts share the filters. Selections remain in runtime memory, not campaign-save data.
-- Existing CustomFilters virtualization and IRTweaks provider-owned bulk-scrap workflow are retained.
+- Complete stored units and parts share the filters; selections are kept in runtime memory, not campaign-save data.
+- Existing CustomFilters virtualization and the provider-owned IRTweaks Alt bulk-scrap workflow are retained.
 
-## Requirements and compatibility
+## Requirements
 
-Requires ModTek and the RogueTech stack providing the exact manifest dependencies **RogueTech Core**, **CustomUnits**, **CustomFilters** and **IRTweaks**. Game/dependency DLLs are not bundled. RogueTech updates can change integration contracts; compatibility with every future pack update is not implied.
+An existing compatible **RogueTech** installation with **ModTek**, **RogueTech Core**, **CustomUnits**, **CustomFilters** and **IRTweaks**. Dependencies and game DLLs are not bundled. This is not a vanilla BATTLETECH mod. RogueTech updates can change compatibility or remove local mods.
 
-This is a **beta** distribution. The build passed its recorded automated checks, and the installed UI received positive user feedback. This is not certification of every live-game combination or destructive transaction. No RogueTech online approval is claimed. Use only configurations permitted by the current RogueTech launcher; do not bypass online integrity checks or change launch safety to force loading.
+## Install
 
-## Verify the download
+### Vortex 1.14+
 
-The ZIP's SHA-256 is:
+1. Close BATTLETECH and the RogueTech launcher/updater before deployment. Back up an existing manual `Mods/BetterStorageFilter` folder and avoid competing manual/Vortex copies.
+2. In Vortex, manage **BATTLETECH** and verify its game location is the intended RogueTech installation.
+3. Download **BetterStorageFilter-0.2.0-vortex.zip** above and drop it into the **Mods** archive area, or choose **Install From File**.
+4. Check that **Mod Type is Engine Injector**, enable the mod, then **Deploy Mods**. This is Vortex's game-root deployment category; the package does not install `dinput8.dll` or replace an engine hook.
+5. The resulting location must be `<game>/Mods/BetterStorageFilter/mod.json` next to `BetterStorageFilter.dll`, **not** the Documents mod folder. If the type/destination is wrong, stop before deployment and check your Vortex version/archive.
 
-```text
-c305b726174ad5ae49bb3404fdc1e6b00f3346b89f57d90fb018e55a43920614
-```
+**Nexus Collections are not supported by this override-based package:** Vortex ignores the override instructions while installing collection dependencies. Use normal Install From File. No separate installer app, extension or Vortex restart is required.
 
-On Windows, compare the output of PowerShell:
+### Manual installation
+
+1. Close the game and launcher/updater. Back up an existing `Mods/BetterStorageFilter` folder before replacing its files; do not edit core mods or saves.
+2. Extract the ZIP's **`BetterStorageFilter` folder into the game's `Mods` folder**. This works with either ZIP. Do not add an extra nested `Mods` or `BetterStorageFilter` folder.
+3. Confirm `<game>/Mods/BetterStorageFilter/mod.json` and `<game>/Mods/BetterStorageFilter/BetterStorageFilter.dll` are siblings.
+4. If using the Vortex ZIP manually, ignore the root `vortex_override_instructions.json`; it is metadata for Vortex, not a file needed in the game directory.
+
+Launch normally through **RogueLauncher**, follow RogueTech's current safety/online rules, and open **MechBay → Storage**. All nine toggles should start ON; ordinary Reset Filters restores them. No online-play approval or integrity-check bypass is provided.
+
+**Alt is IRTweaks' destructive bulk-scrap modifier, not a reset gesture.** Alt+Reset uses the current selected union without resetting; Alt+weight narrows that selection without toggling. Review the provider's quote before confirming; do not experiment on valued inventory merely to inspect filters.
+
+## Verify downloads
+
+Download `SHA256SUMS.txt` and compare the checksum for the ZIP you chose. For example, in PowerShell:
 
 ```powershell
-Get-FileHash -Algorithm SHA256 .\BetterStorageFilter-0.2.0-mvp.zip
+Get-FileHash -Algorithm SHA256 .\BetterStorageFilter-0.2.0-vortex.zip
 ```
 
-Or download all three assets into one directory and run:
+Or download both ZIPs and `release-info.json` alongside `SHA256SUMS.txt`, then run:
 
 ```sh
 sha256sum --check SHA256SUMS.txt
@@ -55,17 +71,12 @@ sha256sum --check SHA256SUMS.txt
 
 Checksums detect byte changes; they are not a separate digital signature.
 
-## Installation / upgrade
+## Uninstall
 
-1. Close BATTLETECH and the RogueTech launcher/updater before changing files.
-2. Back up any existing `Mods/BetterStorageFilter` folder before upgrading. Do not alter core mods or saves.
-3. Verify and extract the mod ZIP into the game's `Mods` directory. The resulting siblings must include `Mods/BetterStorageFilter/mod.json` and `Mods/BetterStorageFilter/BetterStorageFilter.dll`.
-4. Launch through your normal permitted RogueTech setup, then open **MechBay → Storage**. All nine toggles should start ON; ordinary Reset Filters restores them.
+For Vortex-managed files, disable/undeploy the mod through Vortex. For a manual installation, close the game and remove only `Mods/BetterStorageFilter`. No mod-owned campaign state or sidecar requires removal; do not delete or edit saves.
 
-**Alt is IRTweaks' destructive bulk-scrap modifier, not another reset gesture.** Alt+Reset uses the current selected union without resetting it; Alt+weight narrows that selection to the clicked weight without toggling. Review the provider's quote before confirming. Do not test destructive shortcuts on valued inventory just to inspect the filters.
+## Scope and support
 
-To uninstall, close the game and remove only this mod's folder. No mod-owned campaign state or sidecar needs removal; do not delete or edit saves. RogueTech updates may replace or remove local mods.
+The original installed 0.2.0 UI received positive user feedback. This is not an exhaustive gameplay, destructive-transaction or future-modpack compatibility guarantee. The Vortex 2.8.2 destination contract was exercised with installed code/source-map methods in a scratch sandbox, **not through a live Vortex GUI deployment**. The mod DLL is unchanged.
 
-## Support
-
-Use this repository's Issues with the mod version, RogueTech version, a description/screenshot of the Storage problem and relevant redacted log excerpts. Do not post saves, credentials, launcher settings or full private logs.
+Use Issues with the mod/RogueTech versions, a description or screenshot and relevant redacted log excerpts. Do not post saves, credentials, launcher settings or full private logs. Source and development history remain private; this repository contains downloads, checksums, metadata and user documentation only.

@@ -21,5 +21,18 @@
     "Not a vanilla BATTLETECH mod. RogueTech updates may change the required integration ABI.",
     "No game or dependency binaries are included.",
     "No RogueTech online approval or integrity-check bypass is claimed."
-  ]
+  ],
+  "vortex": {
+    "archive": "BetterStorageFilter-0.2.0-vortex.zip",
+    "archive_sha256": "f25acf674c65578af7366507dedc705c136e1437e709ffe97125edcba3e66d30",
+    "override_sha256": "54ec25bd3c2b8c16e6255142b5ca8211e12dc59546bd7c890ec74ab15ef3ecaa",
+    "minimum_version": "1.14.0",
+    "validated_installed_version": "2.8.2",
+    "mod_type": "dinput",
+    "mod_type_label": "Engine Injector",
+    "deployment_directory": "<game>/Mods/BetterStorageFilter",
+    "collections_supported": false,
+    "same_mod_payload_as_manual": true,
+    "live_gui_deployment_tested": false
+  }
 }
