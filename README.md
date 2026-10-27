@@ -2,6 +2,10 @@
 
 Binary releases and supporting documentation for **Better Storage Filter**, a RogueTech-required ModTek mod for **HBS BATTLETECH → MechBay → Storage**. This is not the post-mission salvage screen and is not a vanilla-game mod.
 
+###This mod was programmed using AI. Although a Sr. Software Engineer w/over 25yrs of experience, I chose to use Codex as my programming tool while I did design, architecture, QA, and all final decisions. All code went through a minimum 3 independent agent reviews as well as human review. AI was ONLY used for programmatic work for expedience and overcoming challenges hooking into the game.
+While this version of the mod was designed and written for RogueTech, the RogueTech team is neither responsible for, nor will they in any way support, Better Salvage Filter.
+Use of this mod with RTO WILL get you banned for cheating.
+
 This repository contains **downloads, checksums, release metadata and user documentation only**. Project source and development history are not published here.
 
 ## Download 0.2.0 (beta)
